@@ -5,6 +5,6 @@ module.exports = {
     src: '/_dist_',
   },
   buildOptions: {
-    baseUrl: 'https://github.com/IngDonovan/avocadoPage.git',
+    baseUrl: 'https://ingdonovan.github.io/avocadoPage/',
   },
 }
