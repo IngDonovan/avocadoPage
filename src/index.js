@@ -16,18 +16,25 @@ async function llamada() {
         const items = [];
 
         data.forEach(item => {
+            // document.body.insertAdjacentHTML('beforeend', `
+            //     <div class="container">
+            //         <img src="${url}${item.image}" alt="${item.name}">
+            //         <h2>${item.name}</h2>
+            //         <p>$${item.price}<p>
+            //     </div>
+            // `);
+            const imagen = document.createElement('img');
+            const title = document.createElement('h2');
+            const price = document.createElement('p');
 
-            const container = `
-                <div class="container">
-                    <img src="${url}${item.image}" alt="${item.name}">
-                    <h2>${item.name}</h2>
-                    <p>$${item.price}<p>
-                </div>
-            `;
+            const container = document.createElement('div');
+            container.append(imagen, title, price);
+
             items.push(container);
         });
-        
-        document.body.insertAdjacentHTML('beforeend', items );
+        //console.log(...items);
+        // 
+        document.body.append(...items);
 
 
     } catch (error) {
