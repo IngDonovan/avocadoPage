@@ -6,7 +6,13 @@
 const url = 'https://platzi-avo.vercel.app/';
 const urlData = 'api/avo';
 
-const appNode = document.querySelector('#app')
+const appNode = document.querySelector('#app');
+
+appNode.addEventListener('click',(event) => {
+    if(event.target.nodeName === 'H2'){
+        window.alert(`Diste Click`);
+    };
+});
 
 
  // Intl
@@ -39,6 +45,9 @@ async function llamada() {
             const title = document.createElement('h2');
             title.className = "text-lg"
             title.textContent = item.name;
+            // title.addEventListener('click',() => {
+            //     window.alert(`Diste Click en el ${item.name}`)
+            // });//genera el riesgo de afectar al tener varios objetos, lo ideal es al contenedor de todos
             // title.style.fontSize = '3rem';
             // title.className = 'bigText';
             const price = document.createElement('p');
